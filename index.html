@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    function openOptions(service){
+      document.getElementById('optionTitle').innerText = service;
+      document.getElementById('optionModal').style.display='flex';
+    }
+    function closeOptions(){
+      document.getElementById('optionModal').style.display='none';
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NexFlow.tech | AI Automation Services</title>
@@ -33,6 +42,17 @@
   </style>
 </head>
 <body>
+<div id="optionModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;align-items:center;justify-content:center;">
+  <div style="background:#020617;padding:30px;border-radius:14px;max-width:400px;width:90%;">
+    <h3 id="optionTitle">Service Options</h3>
+    <p>Select your plan:</p>
+    <label><input type="radio" name="plan"> Basic Setup</label><br/>
+    <label><input type="radio" name="plan"> Standard Setup</label><br/>
+    <label><input type="radio" name="plan"> Premium Setup</label><br/><br/>
+    <a href="javascript:openOptions('Selected Service')" class="btn">Continue</a>
+    <a onclick="closeOptions()" class="btn btn-outline">Cancel</a>
+  </div>
+</div>
 
 <header id="home">
   <h1>NexFlow.tech</h1>
@@ -48,6 +68,28 @@
     NexFlow.tech is focused only on <b>AI Automation</b>. We help businesses, schools, and creators
     reduce manual work, save time, and improve efficiency using simple and reliable AI-powered workflows.
   </p>
+</section>
+
+<section id="checkout">
+  <h2>Checkout</h2>
+  <p>Complete your purchase securely.</p>
+
+  <h3>Apply Coupon</h3>
+  <p><b>Coupon Code:</b> YEAR20 (20% OFF)</p>
+
+  <h3>Pay Now</h3>
+  <p>Choose your preferred payment method:</p>
+
+  <a class="btn" href="upi://pay?pa=9416693052@fam&pn=NexFlow%20Tech&cu=INR">Pay via UPI</a>
+  <br/><br/>
+  <a class="btn btn-outline" href="#">Pay via Razorpay (Coming Soon)</a>
+
+  <p style="margin-top:15px;">After payment, you will receive confirmation on email.</p>
+</section>
+
+<section id="coupon">
+  <h2>Apply Coupon</h2>
+  <p>Use coupon code <b>YEAR20</b> to get instant discount.</p>
 </section>
 
 <section id="problems">
@@ -105,71 +147,79 @@
 </section>
 
 <section id="services">
-  <h2>Select a Service</h2>
-  <p><b>Not sure which service you need?</b> Get a <b>FREE DEMO</b> on WhatsApp.</p>
-  <a class="btn" href="https://wa.me/919416693052?text=Hi%20NexFlow%20Tech,%20I%20want%20a%20FREE%20demo%20of%20AI%20automation." style="margin-bottom:25px;">🎯 Get Free Demo</a>
-  <p>Select a service below. You will be redirected to WhatsApp with full context.</p>
+  <h2>Our Services & Pricing</h2>
+  <p>Choose a plan that fits your needs. Transparent pricing, no hidden costs.</p>
+
+  <div id="salePopup" style="background:#ffe9cc;padding:15px;margin-bottom:30px;border-radius:10px;">
+    <b>🎉 End of Year Sale!</b><br/>
+    Flat <b>20% OFF</b> on all services. Use coupon: <b>YEAR20</b>
+  </div>
 
   <div class="services">
 
     <div class="card">
       <h3>AI Enquiry Auto-Reply</h3>
       <p>
-        ✔ Email auto-reply (Gmail)<br/>
-        ✔ Website form auto-response<br/>
-        ✔ Google Form → Email reply<br/>
-        ✔ Instant response within seconds<br/>
-        ✔ Custom reply message
+        ✔ Email & Form auto-reply<br/>
+        ✔ Custom message setup<br/>
+        ✔ Lead saved in Google Sheet<br/>
+        ✔ 7 days support
       </p>
-      <a class="btn" href="https://wa.me/919416693052?text=Hi%20NexFlow%20Tech,%20I%20want%20AI%20Enquiry%20Auto-Reply%20for%20Email/Website%20forms.">Select</a>
+      <p><b>Price:</b> ₹2,999</p>
+      <a class="btn" href="javascript:openOptions('Selected Service')">Buy Now</a>
+      <a class="btn btn-outline" href="https://wa.me/919416693052?text=I%20have%20a%20question%20about%20AI%20Enquiry%20Auto-Reply">Ask on WhatsApp</a>
     </div>
 
     <div class="card">
       <h3>WhatsApp Automation</h3>
       <p>
-        ✔ WhatsApp auto-reply<br/>
-        ✔ Keyword-based replies<br/>
-        ✔ Business enquiry handling<br/>
-        ✔ Manual + auto mode<br/>
-        ✔ Lead capture via WhatsApp
+        ✔ Auto-reply & keyword flows<br/>
+        ✔ Business WhatsApp setup<br/>
+        ✔ Lead capture & tagging<br/>
+        ✔ 14 days support
       </p>
-      <a class="btn" href="https://wa.me/919416693052?text=Hi%20NexFlow%20Tech,%20I%20want%20WhatsApp%20Automation%20for%20my%20business.">Select</a>
+      <p><b>Price:</b> ₹4,999</p>
+      <a class="btn" href="javascript:openOptions('Selected Service')">Buy Now</a>
+      <a class="btn btn-outline" href="https://wa.me/919416693052?text=I%20have%20a%20question%20about%20WhatsApp%20Automation">Ask on WhatsApp</a>
     </div>
 
     <div class="card">
       <h3>AI Chatbot Automation</h3>
       <p>
         ✔ Website AI chatbot<br/>
-        ✔ FAQ auto answers<br/>
-        ✔ Lead qualification<br/>
+        ✔ FAQ & lead qualification<br/>
         ✔ 24/7 availability<br/>
-        ✔ Human handover option
+        ✔ 30 days support
       </p>
-      <a class="btn" href="https://wa.me/919416693052?text=Hi%20NexFlow%20Tech,%20I%20want%20AI%20Chatbot%20for%20my%20website.">Select</a>
+      <p><b>Price:</b> ₹6,999</p>
+      <a class="btn" href="javascript:openOptions('Selected Service')">Buy Now</a>
+      <a class="btn btn-outline" href="https://wa.me/919416693052?text=I%20have%20a%20question%20about%20AI%20Chatbot%20Automation">Ask on WhatsApp</a>
     </div>
 
     <div class="card">
       <h3>Workflow Automation</h3>
       <p>
-        ✔ Google Sheets automation<br/>
-        ✔ Email → Sheet sync<br/>
-        ✔ Task automation<br/>
-        ✔ Admin work reduction<br/>
-        ✔ Custom business workflows
+        ✔ Custom business workflows<br/>
+        ✔ Google Sheets & Email sync<br/>
+        ✔ Reduce manual work<br/>
+        ✔ 30 days support
       </p>
-      <a class="btn" href="https://wa.me/919416693052?text=Hi%20NexFlow%20Tech,%20I%20want%20Workflow%20Automation%20for%20my%20operations.">Select</a>
+      <p><b>Price:</b> ₹8,999</p>
+      <a class="btn" href="javascript:openOptions('Selected Service')">Buy Now</a>
+      <a class="btn btn-outline" href="https://wa.me/919416693052?text=I%20have%20a%20question%20about%20Workflow%20Automation">Ask on WhatsApp</a>
     </div>
 
     <div class="card">
       <h3>Custom AI Automation</h3>
       <p>
-        ✔ Business-specific solution<br/>
-        ✔ Multi-tool integration<br/>
-        ✔ Custom logic & flow<br/>
-        ✔ Scalable automation<br/>
-        ✔ Long-term support
+        ✔ Fully custom solution<br/>
+        ✔ Multiple tool integration<br/>
+        ✔ Scalable setup<br/>
+        ✔ Priority support
       </p>
-      <a class="btn" href="https://wa.me/919416693052?text=Hi%20NexFlow%20Tech,%20I%20need%20Custom%20AI%20Automation%20solution.">Select</a>
+      <p><b>Starting from:</b> ₹14,999</p>
+      <a class="btn" href="javascript:openOptions('Selected Service')">Buy Now</a>
+      <a class="btn btn-outline" href="https://wa.me/919416693052?text=I%20have%20a%20question%20about%20Custom%20AI%20Automation">Ask on WhatsApp</a>
     </div>
 
   </div>
@@ -218,4 +268,3 @@
 
 </body>
 </html>
-
